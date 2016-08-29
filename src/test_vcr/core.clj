@@ -1,6 +1,5 @@
-(ns test-vcr.core)
+(ns test-vcr.core
+  (:require [clj-http.client :as http]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn user-info [user]
+  (http/get (str "https://api.github.com/users/" user)))
